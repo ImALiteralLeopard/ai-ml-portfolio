@@ -1,0 +1,2 @@
+-- Main game script
+-- This will coordinate core game systems
