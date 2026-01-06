@@ -1,32 +1,35 @@
 # Game Ideas (WIP)
 
-Idea: Alien Shooter FPS with puzzles and quests
+# Alien Shooter FPS – Game Ideas
 
-Things I will add:
-- Custom mechanics (not a template)
-- Player progression (XP, levels, badges)
-- Persistent data saving
-- Simple UI (menus, stats)
+## Core Concept
+- FPS game with puzzles and quests
+- Player progression with XP, levels, and badges
 
-Custom mechanics:
-- Movement abillites: dash, double jump, and roll
-- Inventory
-- Crafting
-- FPS system
+---
 
-Player progression:
+## Systems to Implement
+
+### 1. Custom Mechanics
+- Movement abilities: dash, double jump, roll
+- Inventory system
+- Crafting system
+- FPS combat system
+
+### 2. Player Progression
 - Levels with benefits
-- XP to gain levels (can be earned by playing)
+- XP gained by gameplay
+- Leaderboards / stats
 
-Persistent data saving: 
-- Saving levels
-- Saving quest progress
-- Saving inventory
-- Saving leaderstats
+### 3. Persistent Data Saving
+- Save player levels
+- Save quest progress
+- Save inventory
+- Save leaderstats
 
-Simple UI:
-- Inventory
-- Quests
-- Crafting
+### 4. Simple UI
+- Inventory screen
+- Quest screen
+- Crafting interface
 - Mobile buttons for abilities
 - Shops
