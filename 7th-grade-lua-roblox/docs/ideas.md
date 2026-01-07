@@ -42,6 +42,9 @@ The game will include:
   - Increased fire rate  
   - Temporary combat buffs
 
+- **Healing System**
+  Medkit that recovers 10% of health (has a 30 second cooldown).
+
 - **Kinetic Aero Dash**  
   Directional lunge ability:
   - Moves in the direction the player is facing  
@@ -92,9 +95,7 @@ The following player data will be saved:
 ---
 
 ### 4. User Interface (UI)
-- Inventory screen
 - Quest tracking screen
-- Crafting interface
 - Mobile ability buttons
 - Shop interface
 
