@@ -1,8 +1,3 @@
-# XP System Flowchart — Detailed with XP Sources
-
-> Visual representation of the XP system including all sources of XP, level checks, and rank milestones.
-
-```mermaid
 flowchart TD
     A[Player Performs Action] --> B{Action Type?}
     B --> C[Training]
@@ -23,12 +18,16 @@ flowchart TD
     K --> M
     L --> M
     
-    M --> N{XP >= XP Required for Next Level?}
+    M --> N{XP >= XP Required?}
     N -- Yes --> O[Level Up Player]
     N -- No --> P[Continue Gameplay]
     
-    O --> Q{Is New Level a Rank Milestone? (Every 10 Levels)}
+    O --> Q{Rank Milestone?}
     Q -- Yes --> R[Update Rank & Give Rewards]
+    Q -- No --> P
+    
+    R --> P
+
     Q -- No --> P
     
     R --> P
