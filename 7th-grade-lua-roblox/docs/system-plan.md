@@ -11,82 +11,86 @@ This system is designed to be simple at first, scalable later, and compatible wi
 
 ---
 
-## XP Sources
-Players can earn XP from multiple gameplay activities:
-- Training modes
-- Enemy kills
-- Completing quests
-- Time played
-- Winning matches
-
-Different activities will reward different amounts of XP to prevent farming and encourage varied gameplay.
+## 1. Level Range
+- Player levels range from **1 to 100**  
+- Levels increase sequentially (no skipping levels)
 
 ---
 
-## Leveling Rules
-- XP is **only gained**, never lost
-- XP required to level up **increases as level increases**
-- Early levels require much less XP than late-game levels
-  - Example:  
-    - Level 1 → ~150 XP  
-    - Level 99 → ~15,000 XP
-- As players progress, they earn XP **more easily**, but leveling still becomes harder overall
-
-This ensures progression never stops, but slows down naturally over time.
+## 2. XP Required Per Level
+- XP required to level up **increases with level**  
+- The progression follows a **quadratic curve**  
+- Conceptual formula:  
+  **XP Required = Base Value × (Current Level²)**  
+- Early levels require relatively low XP  
+- Late-game levels require significantly more XP, but remain achievable
 
 ---
 
-## Ranks & Milestones
-- Levels range from **1 to 100**
-- Every **10 levels**, the player reaches a new rank title
+## 3. Base XP Value
+- A **base XP value** controls overall progression speed  
+- Adjusting the base value allows **global tuning** without redesigning the system  
+- Base value ensures:  
+  - Fast early progression  
+  - Slower, meaningful late-game progression
+
+---
+
+## 4. XP Gain Scaling
+- XP earned from gameplay **increases as players progress**  
+- XP rewards scale **slowly** (linear or near-linear growth)  
+- XP gain scaling is **always slower than XP requirements**  
+- Ensures:  
+  - Progression never stops  
+  - Leveling becomes harder over time, without being impossible
+
+---
+
+## 5. XP Sources
+Players earn XP from multiple activities:
+
+| Source        | XP Value |
+|---------------|----------|
+| Training      | Low      |
+| Enemy Kills   | Medium   |
+| Quests        | High     |
+| Match Wins    | High     |
+| Time Played   | Very Low |
+
+> Each source has different weight to prevent farming and encourage varied gameplay
+
+---
+
+## 6. Level-Up Behavior
+- XP is accumulated continuously  
+- When XP ≥ required XP:  
+  - Player level increases by **1**  
+  - Excess XP carries over to next level  
 - Normal level-ups do **not** grant rewards
 
-### Rank Rewards (Every 10 Levels)
-When a new rank is reached, players unlock:
-- New weapons
-- Additional quest tiers
-- Slight permanent buffs
-- A new rank title
+---
+
+## 7. Rank Milestones
+- A new rank is reached **every 10 levels**  
+- Rank milestones unlock:  
+  - New weapons  
+  - New quest tiers  
+  - Minor permanent buffs  
+  - New rank title  
+- Rank rewards are **separate from standard level-ups**
 
 ---
 
-## Rank Titles
-- Rank 1–10: **Static Recruit**
-- Rank 11–20: **Kinetic Specialist**
-- Rank 21–30: **Orbital Sentinel**
-- Rank 31–40: **Plasma Captain**
-- Rank 41–50: **Nova Commander**
-- Rank 51–60: **Stellar Warden**
-- Rank 61–70: **Zenith Striker**
-- Rank 71–80: **Celestial Vanguard**
-- Rank 81–90: **Overdrive Archon**
-- Rank 91–100: **Protocol Master**
-
-All ranks are color-coded for UI clarity.
+## 8. Design Constraints
+- XP is **never lost**  
+- Must support **persistent saving** later  
+- System must be **deterministic and testable** without UI
 
 ---
 
-## Leaderstats & Economy (Planned)
-- Wins
-- Plasma (currency)
-  - Used to buy weapons or melee items
+## Notes for Future Tuning
+- Base XP value can be adjusted to tweak pacing  
+- XP reward values can be balanced after playtesting  
+- Rank milestone rewards can expand **without changing XP logic**
 
-These stats will be integrated later but are acknowledged in this system design.
-
----
-
-## Out of Scope (For Now)
-The following are intentionally excluded from the first implementation:
-- UI
-- DataStore saving
-- Weapon logic
-- Combat balancing
-
----
-
-## Success Criteria
-This system is considered complete when:
-- XP can be earned from multiple sources
-- Levels increase correctly based on XP
-- Rank titles update at correct milestones
-- The system can later support saving without redesign
+Rank milestone rewards can be expanded without changing XP logic
